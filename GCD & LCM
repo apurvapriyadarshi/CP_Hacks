@@ -4,7 +4,8 @@ import java.lang.*;
 import java.io.*;
 
 public class TestClass {
-    public static void main(String args[] ) throws Exception {
+    public static void main(String args[] ) throws Exception 
+    {
         Scanner scan = new Scanner(System.in);
         int a=scan.nextInt();
         int b=scan.nextInt();
