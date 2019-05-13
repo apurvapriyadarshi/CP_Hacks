@@ -1,0 +1,40 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        int sc=scan.nextInt();
+        boolean prime[]=new boolean[sc+1];
+        Arrays.fill(prime,true);
+        seive(sc,prime);
+        
+        for(int i=0;i<=sc;i++)
+        {
+            if(prime[i])
+            System.out.println(i);    
+        }
+        
+    }
+    public static void seive(int sc, boolean prime[])
+    {
+       prime[0]=false;
+       prime[1]=false;
+       for(int i=2;i<=Math.sqrt(sc);i++)
+       {
+           if(prime[i])
+           {
+               for(int j=i*2; j<=sc; j=j+i)
+               {
+               prime[j]=false;
+               
+               }
+               
+           }
+           
+       }
+       
+    }
+}
