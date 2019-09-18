@@ -1,0 +1,23 @@
+package testing;
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Test {
+	public static void main(String args[])
+	{
+		String s="geeksforgeeks";
+		
+		LinkedHashSet<Character> lhs = new LinkedHashSet<>();
+		
+		for(Character ch : s.toCharArray()) {
+			lhs.add(ch);
+		}
+		
+		for(Character ch : lhs)
+		{
+			System.out.print(ch);
+		}
+	}
+}
