@@ -1,0 +1,50 @@
+package testing;
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Node{
+	int data;
+	Node left,right;
+	
+	public Node(int item)
+	{
+		data=item;
+		right=left=null;
+	}
+}
+public class Test {
+	Node root;
+	public static void main(String[] args)
+	{
+		Test tree = new Test();
+		tree.root=new Node(5);
+		tree.root.left= new Node(2);
+		tree.root.right=new Node(6);
+		tree.root.left.left=new Node(1);
+		tree.root.left.right=new Node(4);
+		
+		if(tree.isBST())
+		{
+			System.out.println("Yes BST");
+		}
+		else {
+			System.out.println("No BST");
+		}
+	}
+	public  boolean isBST()
+	{		
+		return isBSTUtil(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+	}
+	private boolean isBSTUtil(Node root, int minValue, int maxValue) {
+		if(root == null)
+			return true;
+		if(root.data < minValue || root.data >maxValue)
+			return false;
+		
+		return (isBSTUtil(root.left,minValue ,root.data-1 ) && isBSTUtil(root.right, root.data+1, maxValue));
+		
+		
+	}
+	
+}
